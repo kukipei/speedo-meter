@@ -2,8 +2,11 @@ import Gears from "./components/Gears";
 import Temperature from "./components/Temperature";
 import Velocity from "./components/Velocity";
 import { GeolocationProvider } from "./context/GeolocationProvider";
+import { useWakeLock } from "./hooks/useWakeLock";
 
 function App() {
+  useWakeLock(true);
+
   return (
     <GeolocationProvider>
       <main>
