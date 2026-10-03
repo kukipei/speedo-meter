@@ -116,3 +116,24 @@ main {
   gap: 1em;
   font-size: min(3vw, 4.5vh);
 }
+
+@media (orientation: portrait) {
+  main {
+    grid-template-columns: none;
+    grid-template-rows: 1fr 2fr 1.5fr;
+  }
+
+  .velocity-section {
+    font-size: min(30vw, 28vh);
+  }
+
+  .temperature-section {
+    font-size: min(10vw, 12vh);
+  }
+
+  .gears-section {
+    flex-direction: row;
+    gap: 2em;
+    font-size: min(4.5vw, 4vh);
+  }
+}
