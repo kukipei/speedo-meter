@@ -4,7 +4,6 @@ import Spinner from "./Spinner";
 function Velocity() {
   const { loading, coords, error } = useGeolocationContext();
 
-  console.log(coords);
   if (loading) return <Spinner />;
   if (error) return <p>{error.message}</p>;
 
