@@ -14,10 +14,10 @@ function Gears() {
   let gearOnUp: string = "N";
   let gearOnDown: string = "N";
 
-  if (speed === 0) {
+  if (speed <= 2) {
     gearOnUp = "N";
     gearOnDown = "N";
-  } else if (speed > 2 && speed <= 15) {
+  } else if (speed <= 15) {
     gearOnDown = "1";
   } else if (speed <= 27) {
     gearOnUp = "1";
