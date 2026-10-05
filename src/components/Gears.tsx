@@ -19,6 +19,7 @@ function Gears() {
     gearOnDown = "N";
   } else if (speed <= 15) {
     gearOnDown = "1";
+    gearOnUp = "1";
   } else if (speed <= 27) {
     gearOnUp = "1";
     gearOnDown = "2";
@@ -34,8 +35,9 @@ function Gears() {
   } else if (speed <= 83) {
     gearOnUp = "5";
     gearOnDown = "6";
-  } else {
+  } else if (speed > 83) {
     gearOnUp = "6";
+    gearOnDown = "6";
   }
 
   return (
