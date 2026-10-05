@@ -1,3 +1,4 @@
+import AverageSpeed from "./components/AverageSpeed";
 import Gears from "./components/Gears";
 import Temperature from "./components/Temperature";
 import Velocity from "./components/Velocity";
@@ -15,6 +16,9 @@ function App() {
         </section>
         <section className="velocity-section">
           <Velocity />
+        </section>
+        <section className="average-speed-section">
+          <AverageSpeed />
         </section>
         <section className="gears-section">
           <Gears />
