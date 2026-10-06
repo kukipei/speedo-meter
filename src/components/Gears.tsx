@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useGeolocationContext } from "../context/geolocation-context";
 import Spinner from "./Spinner";
+import Button from "./Button";
 
 function Gears() {
   const { loading, coords, error } = useGeolocationContext();
@@ -53,9 +54,9 @@ function Gears() {
           <h2>{gearOnDown}</h2>
         </div>
       </div>
-      <button onClick={() => setShowGearsList(!showGearsList)}>
+      <Button onClick={() => setShowGearsList(!showGearsList)}>
         Gear list
-      </button>
+      </Button>
       {showGearsList && (
         <div className="gear-lists">
           <div>
