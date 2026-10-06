@@ -1,5 +1,6 @@
 import AverageSpeed from "./components/AverageSpeed";
 import Gears from "./components/Gears";
+import LeanAngle from "./components/LeanAngle";
 import Temperature from "./components/Temperature";
 import Velocity from "./components/Velocity";
 import { GeolocationProvider } from "./context/GeolocationProvider";
@@ -22,6 +23,9 @@ function App() {
         </section>
         <section className="gears-section">
           <Gears />
+        </section>
+        <section className="lean-angle-section">
+          <LeanAngle />
         </section>
       </main>
     </GeolocationProvider>
