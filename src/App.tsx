@@ -1,3 +1,4 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AverageSpeed from "./components/AverageSpeed";
 import Gears from "./components/Gears";
 import LeanAngle from "./components/LeanAngle";
@@ -5,29 +6,26 @@ import Temperature from "./components/Temperature";
 import Velocity from "./components/Velocity";
 import { GeolocationProvider } from "./context/GeolocationProvider";
 import { useWakeLock } from "./hooks/useWakeLock";
+import Home from "./components/Home";
+import AppLayout from "./AppLayout";
 
 function App() {
   useWakeLock(true);
 
   return (
     <GeolocationProvider>
-      <main>
-        <section className="temperature-section">
-          <Temperature />
-        </section>
-        <section className="velocity-section">
-          <Velocity />
-        </section>
-        <section className="average-speed-section">
-          <AverageSpeed />
-        </section>
-        <section className="gears-section">
-          <Gears />
-        </section>
-        <section className="lean-angle-section">
-          <LeanAngle />
-        </section>
-      </main>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<AppLayout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="velocity" element={<Velocity />} />
+            <Route path="temperature" element={<Temperature />} />
+            <Route path="average-speed" element={<AverageSpeed />} />
+            <Route path="gears" element={<Gears />} />
+            <Route path="lean-angle" element={<LeanAngle />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </GeolocationProvider>
   );
 }

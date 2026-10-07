@@ -27,10 +27,12 @@ function AverageSpeed() {
   if (error) return null;
 
   return (
-    <div className="average-speed">
-      <p>{Math.round(average)}</p>
-      <Button onClick={resetAverageSpeed}>Reset</Button>
-    </div>
+    <section className="average-speed-section">
+      <div className="average-speed">
+        <p>{Math.round(average)}</p>
+        <Button onClick={resetAverageSpeed}>Reset</Button>
+      </div>
+    </section>
   );
 }
 
