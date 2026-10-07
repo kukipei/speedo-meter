@@ -8,9 +8,11 @@ function LeanAngle() {
 
   if (permission === "required") {
     return (
-      <div className="lean-angle">
-        <Button onClick={requestPermission}>Enable lean angle</Button>
-      </div>
+      <section className="lean-angle-section">
+        <div className="lean-angle">
+          <Button onClick={requestPermission}>Enable lean angle</Button>
+        </div>
+      </section>
     );
   }
 
@@ -19,10 +21,12 @@ function LeanAngle() {
   const side = angle === 0 ? "" : angle > 0 ? "R" : "L";
 
   return (
-    <div className="lean-angle">
-      <p>{Math.abs(angle)}°</p>
-      <span className="lean-side">{side}</span>
-    </div>
+    <section className="lean-angle-section">
+      <div className="lean-angle">
+        <p>{Math.abs(angle)}°</p>
+        <span className="lean-side">{side}</span>
+      </div>
+    </section>
   );
 }
 

@@ -32,7 +32,11 @@ function Temperature() {
 
   if (temperature === null) return <Spinner />;
 
-  return <div>{temperature !== null && `${temperature}°C`}</div>;
+  return (
+    <section className="temperature-section">
+      <div>{temperature !== null && `${temperature}°C`}</div>
+    </section>
+  );
 }
 
 export default Temperature;

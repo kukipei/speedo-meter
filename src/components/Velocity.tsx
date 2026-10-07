@@ -7,7 +7,11 @@ function Velocity() {
   if (loading) return <Spinner />;
   if (error) return <p>{error.message}</p>;
 
-  return <p className="velocity">{Math.round((coords?.speed ?? 0) * 3.6)}</p>;
+  return (
+    <section className="velocity-section">
+      <p className="velocity">{Math.round((coords?.speed ?? 0) * 3.6)}</p>
+    </section>
+  );
 }
 
 export default Velocity;
