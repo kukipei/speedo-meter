@@ -107,6 +107,7 @@ h6 {
 
 .app-header a {
   opacity: 0.6;
+  font-size: 3rem;
 }
 
 .app-header a.active {
