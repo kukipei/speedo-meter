@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useGeolocationContext } from "../context/geolocation-context";
 import { get } from "../util/http";
 import Spinner from "./Spinner";
+import { TbTemperatureSun } from "react-icons/tb";
+import { NavLink } from "react-router-dom";
 
 function Temperature() {
   const { coords } = useGeolocationContext();
@@ -33,9 +35,12 @@ function Temperature() {
   if (temperature === null) return <Spinner />;
 
   return (
-    <section className="temperature-section">
-      <div>{temperature !== null && `${temperature}°C`}</div>
-    </section>
+    <NavLink to="/temperature" style={{ display: "contents" }}>
+      <section className="temperature-section">
+        <TbTemperatureSun />
+        <div>{temperature !== null && `${temperature}°C`}</div>
+      </section>
+    </NavLink>
   );
 }
 

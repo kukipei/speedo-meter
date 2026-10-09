@@ -1,5 +1,8 @@
+import { RxAngle } from "react-icons/rx";
 import { useLeanAngle } from "../hooks/useLeanAngle";
 import Button from "./Button";
+import { NavLink } from "react-router-dom";
+import { ignoreButtonClicks } from "../util/ignoreButtonClicks";
 
 function LeanAngle() {
   const { angle, permission, requestPermission } = useLeanAngle();
@@ -8,25 +11,35 @@ function LeanAngle() {
 
   if (permission === "required") {
     return (
-      <section className="lean-angle-section">
-        <div className="lean-angle">
-          <Button onClick={requestPermission}>Enable lean angle</Button>
-        </div>
-      </section>
+      <NavLink
+        to="/lean-angle"
+        style={{ display: "contents" }}
+        onClick={ignoreButtonClicks}
+      >
+        <section className="lean-angle-section">
+          <RxAngle />
+          <div className="lean-angle">
+            <Button onClick={requestPermission}>Enable lean angle</Button>
+          </div>
+        </section>
+      </NavLink>
     );
   }
 
-  if (angle === null) return <div className="lean-angle">--</div>;
+  // if (angle === null) return <div className="lean-angle">--</div>;
 
   const side = angle === 0 ? "" : angle > 0 ? "R" : "L";
 
   return (
-    <section className="lean-angle-section">
-      <div className="lean-angle">
-        <p>{Math.abs(angle)}°</p>
-        <span className="lean-side">{side}</span>
-      </div>
-    </section>
+    <NavLink to="/lean-angle" style={{ display: "contents" }}>
+      <section className="lean-angle-section">
+        <RxAngle />
+        <div className="lean-angle">
+          <p>{Math.abs(angle)}°</p>
+          <span className="lean-side">{side}</span>
+        </div>
+      </section>
+    </NavLink>
   );
 }
 

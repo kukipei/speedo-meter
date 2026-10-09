@@ -2,6 +2,9 @@ import { useState } from "react";
 import { useGeolocationContext } from "../context/geolocation-context";
 import Spinner from "./Spinner";
 import Button from "./Button";
+import { GiGearStickPattern } from "react-icons/gi";
+import { NavLink } from "react-router-dom";
+import { ignoreButtonClicks } from "../util/ignoreButtonClicks";
 
 function Gears() {
   const { loading, coords, error } = useGeolocationContext();
@@ -42,42 +45,48 @@ function Gears() {
   }
 
   return (
-    <section className="gears-section">
-      <div className="gears">
-        <span className="gear-label">Recomended gear</span>
-        <div className="gear-current">
-          <div className="gear-item">
-            <span className="gear-label">On up</span>
-            <h2>{gearOnUp}</h2>
+    <NavLink
+      to="/gears"
+      style={{ display: "contents" }}
+      onClick={ignoreButtonClicks}
+    >
+      <section className="gears-section">
+        <GiGearStickPattern />
+        <div className="gears">
+          <div className="gear-current">
+            <div className="gear-item">
+              <span className="gear-label">On up</span>
+              <h2>{gearOnUp}</h2>
+            </div>
+            <div className="gear-item">
+              <span className="gear-label">On down</span>
+              <h2>{gearOnDown}</h2>
+            </div>
           </div>
-          <div className="gear-item">
-            <span className="gear-label">On down</span>
-            <h2>{gearOnDown}</h2>
-          </div>
+          <Button onClick={() => setShowGearsList(!showGearsList)}>
+            Gear list
+          </Button>
+          {showGearsList && (
+            <div className="gear-lists">
+              <div>
+                <h3>1. → 2. 27 km/h</h3>
+                <h3>2. → 3. 45 km/h</h3>
+                <h3>3. → 4. 58 km/h</h3>
+                <h3>4. → 5. 71 km/h</h3>
+                <h3>5. → 6. 83 km/h</h3>
+              </div>
+              <div>
+                <h3>6. → 5. 71 km/h</h3>
+                <h3>5. → 4. 58 km/h</h3>
+                <h3>4. → 3. 45 km/h</h3>
+                <h3>3. → 2. 27 km/h</h3>
+                <h3>2. → 1. 15 km/h</h3>
+              </div>
+            </div>
+          )}
         </div>
-        <Button onClick={() => setShowGearsList(!showGearsList)}>
-          Gear list
-        </Button>
-        {showGearsList && (
-          <div className="gear-lists">
-            <div>
-              <h3>1. → 2. 27 km/h</h3>
-              <h3>2. → 3. 45 km/h</h3>
-              <h3>3. → 4. 58 km/h</h3>
-              <h3>4. → 5. 71 km/h</h3>
-              <h3>5. → 6. 83 km/h</h3>
-            </div>
-            <div>
-              <h3>6. → 5. 71 km/h</h3>
-              <h3>5. → 4. 58 km/h</h3>
-              <h3>4. → 3. 45 km/h</h3>
-              <h3>3. → 2. 27 km/h</h3>
-              <h3>2. → 1. 15 km/h</h3>
-            </div>
-          </div>
-        )}
-      </div>
-    </section>
+      </section>
+    </NavLink>
   );
 }
 

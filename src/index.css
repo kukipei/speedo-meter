@@ -143,6 +143,34 @@ main {
   overflow: hidden;
 }
 
+/* Icon stays on the left; the data is centered in the remaining space. */
+.velocity-section,
+.temperature-section,
+.average-speed-section,
+.gears-section,
+.lean-angle-section {
+  justify-content: flex-start;
+}
+
+.velocity-section > svg,
+.temperature-section > svg,
+.average-speed-section > svg,
+.gears-section > svg,
+.lean-angle-section > svg {
+  flex: none;
+  margin-left: 0.5em;
+}
+
+.velocity-section > :not(svg),
+.temperature-section > :not(svg),
+.average-speed-section > :not(svg),
+.gears-section > :not(svg),
+.lean-angle-section > :not(svg) {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+}
+
 .velocity-section {
   font-size: min(16vw, 40vh);
 }
@@ -160,7 +188,6 @@ main {
 }
 
 .gears-section {
-  flex-direction: column;
   gap: 1em;
   font-size: min(3vw, 4.5vh);
 }
@@ -179,8 +206,16 @@ main {
     font-size: min(30vw, 28vh);
   }
 
+  .velocity-section svg {
+    font-size: min(10vw, 28vh);
+  }
+
   .average-speed-section {
     font-size: min(20vw, 18vh);
+  }
+
+  .average-speed-section svg {
+    font-size: min(10vw, 18vh);
   }
 
   .temperature-section {
@@ -191,6 +226,10 @@ main {
     flex-direction: row;
     gap: 2em;
     font-size: min(4.5vw, 4vh);
+  }
+
+  .gears-section svg {
+    font-size: min(10vw, 4vh);
   }
 }
 
