@@ -26,7 +26,7 @@ function LeanAngle() {
     );
   }
 
-  // if (angle === null) return <div className="lean-angle">--</div>;
+  if (angle === null) return null;
 
   const side = angle === 0 ? "" : angle > 0 ? "R" : "L";
 
