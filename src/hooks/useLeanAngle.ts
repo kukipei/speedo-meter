@@ -36,8 +36,9 @@ function computeLeanAngle(beta: number, gamma: number): number {
 }
 
 export function useLeanAngle() {
-  const [permission, setPermission] = useState<Permission>(getInitialPermission);
-  const [angle, setAngle] = useState<number | null>(null);
+  const [permission, setPermission] =
+    useState<Permission>(getInitialPermission);
+  const [angle, setAngle] = useState<number>(0);
 
   const requestPermission = useCallback(async () => {
     const ctor = DeviceOrientationEvent as PermissionedOrientationEvent;
