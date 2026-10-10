@@ -219,6 +219,10 @@ main {
     flex: 0 1 auto;
     margin-block: auto;
   }
+
+  .average-speed {
+    flex-direction: column;
+  }
 }
 
 .velocity-section {
@@ -327,6 +331,17 @@ main {
   line-height: 1;
 }
 
+.lean-angle-row {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.lean-max {
+  font-size: 0.5em;
+  opacity: 0.6;
+}
+
 .lean-side {
   font-size: 0.5em;
 }
@@ -363,9 +378,9 @@ main {
 
 .average-speed {
   display: flex;
-  flex-direction: column;
   align-items: center;
   gap: 0.2em;
+  justify-content: center;
 }
 
 .average-speed button {

@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import { ignoreButtonClicks } from "../util/ignoreButtonClicks";
 
 function LeanAngle() {
-  const { angle, permission, requestPermission } = useLeanAngle();
+  const { angle, maxLeft, maxRight, permission, requestPermission } = useLeanAngle();
 
   if (permission === "unsupported") return null;
 
@@ -32,9 +32,17 @@ function LeanAngle() {
     <NavLink to="/lean-angle" style={{ display: "contents" }}>
       <section className="lean-angle-section">
         <RxAngle />
-        <div className="lean-angle">
-          <p>{Math.abs(angle)}°</p>
-          <span className="lean-side">{side}</span>
+        <div className="lean-angle-row">
+          <span className="lean-max" title="Max left">
+            {maxLeft}°
+          </span>
+          <div className="lean-angle">
+            <p>{Math.abs(angle)}°</p>
+            <span className="lean-side">{side}</span>
+          </div>
+          <span className="lean-max" title="Max right">
+            {maxRight}°
+          </span>
         </div>
       </section>
     </NavLink>

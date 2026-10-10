@@ -39,6 +39,8 @@ export function useLeanAngle() {
   const [permission, setPermission] =
     useState<Permission>(getInitialPermission);
   const [angle, setAngle] = useState<number>(0);
+  const [maxLeft, setMaxLeft] = useState<number>(0);
+  const [maxRight, setMaxRight] = useState<number>(0);
 
   const requestPermission = useCallback(async () => {
     const ctor = DeviceOrientationEvent as PermissionedOrientationEvent;
@@ -56,12 +58,15 @@ export function useLeanAngle() {
 
     const onOrientation = (event: DeviceOrientationEvent) => {
       if (event.beta === null || event.gamma === null) return;
-      setAngle(Math.round(computeLeanAngle(event.beta, event.gamma)));
+      const rounded = Math.round(computeLeanAngle(event.beta, event.gamma));
+      setAngle(rounded);
+      if (rounded < 0) setMaxLeft((max) => Math.max(max, -rounded));
+      else if (rounded > 0) setMaxRight((max) => Math.max(max, rounded));
     };
 
     window.addEventListener("deviceorientation", onOrientation);
     return () => window.removeEventListener("deviceorientation", onOrientation);
   }, [permission]);
 
-  return { angle, permission, requestPermission };
+  return { angle, maxLeft, maxRight, permission, requestPermission };
 }
