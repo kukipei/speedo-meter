@@ -42,7 +42,7 @@ function LeanAngle() {
             <span className="lean-side">{side}</span>
           </div>
           <span className="lean-max" title="Max right">
-            {maxRight}°nsto
+            {maxRight}°
           </span>
         </div>
       </section>
