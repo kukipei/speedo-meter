@@ -1,4 +1,3 @@
-import { IoIosSpeedometer } from "react-icons/io";
 import { useGeolocationContext } from "../context/geolocation-context";
 import Spinner from "./Spinner";
 import { NavLink } from "react-router-dom";
@@ -12,7 +11,6 @@ function Velocity() {
   return (
     <NavLink to="/velocity" style={{ display: "contents" }}>
       <section className="velocity-section">
-        <IoIosSpeedometer />
         <p className="velocity">{Math.round((coords?.speed ?? 0) * 3.6)}</p>
       </section>
     </NavLink>

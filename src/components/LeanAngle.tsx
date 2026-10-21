@@ -1,4 +1,3 @@
-import { RxAngle } from "react-icons/rx";
 import { useLeanAngle } from "../hooks/useLeanAngle";
 import Button from "./Button";
 import { NavLink } from "react-router-dom";
@@ -18,7 +17,6 @@ function LeanAngle() {
         onClick={ignoreButtonClicks}
       >
         <section className="lean-angle-section">
-          <RxAngle />
           <div className="lean-angle">
             <Button onClick={requestPermission}>Enable lean angle</Button>
           </div>
@@ -32,7 +30,6 @@ function LeanAngle() {
   return (
     <NavLink to="/lean-angle" style={{ display: "contents" }}>
       <section className="lean-angle-section">
-        <RxAngle />
         <div className="lean-angle-row">
           <span className="lean-max" title="Max left">
             {maxLeft}°

@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { useGeolocationContext } from "../context/geolocation-context";
 import Spinner from "./Spinner";
 import Button from "./Button";
-import { TbAlarmAverage } from "react-icons/tb";
 import { NavLink } from "react-router-dom";
 import { ignoreButtonClicks } from "../util/ignoreButtonClicks";
 
@@ -36,7 +35,6 @@ function AverageSpeed() {
       onClick={ignoreButtonClicks}
     >
       <section className="average-speed-section">
-        <TbAlarmAverage />
         <div className="average-speed">
           <p>{Math.round(average)}</p>
           <Button onClick={resetAverageSpeed}>Reset</Button>

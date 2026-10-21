@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useGeolocationContext } from "../context/geolocation-context";
 import Spinner from "./Spinner";
 import Button from "./Button";
-import { GiGearStickPattern } from "react-icons/gi";
 import { NavLink } from "react-router-dom";
 import { ignoreButtonClicks } from "../util/ignoreButtonClicks";
 
@@ -51,7 +50,6 @@ function Gears() {
       onClick={ignoreButtonClicks}
     >
       <section className="gears-section">
-        <GiGearStickPattern />
         <div className="gears">
           <div className="gear-current">
             <div className="gear-item">
