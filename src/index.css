@@ -224,6 +224,10 @@ main {
   .average-speed {
     flex-direction: column;
   }
+
+  .lean-angle-row {
+    gap: 1em;
+  }
 }
 
 .velocity-section {
@@ -286,6 +290,10 @@ main {
   .gears-section svg {
     font-size: min(10vw, 4vh);
   }
+
+  .lean-angle-row {
+    gap: 0.8em;
+  }
 }
 
 .gears {
@@ -337,7 +345,6 @@ main {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  gap: 1em;
 }
 
 .lean-max {
