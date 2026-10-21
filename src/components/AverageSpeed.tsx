@@ -17,10 +17,9 @@ function AverageSpeed() {
   }
 
   useEffect(() => {
-    const speed = coords?.speed;
-    // Only count samples while moving, so standing still doesn't drag the average down
-    if (!speed || speed <= 0) return;
-    totals.current.sum += speed * 3.6;
+    if (!coords) return;
+    const speed = (coords.speed ?? 0) * 3.6;
+    totals.current.sum += speed;
     totals.current.count += 1;
     setAverage(totals.current.sum / totals.current.count);
   }, [coords]);
