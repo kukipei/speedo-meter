@@ -102,8 +102,18 @@ h6 {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
-  gap: 1.5em;
+  gap: 0;
   white-space: nowrap;
+}
+
+.app-header li {
+  display: flex;
+  align-items: center;
+  padding: 0 0.75em;
+}
+
+.app-header li + li {
+  border-left: 1px solid rgba(128, 128, 128, 0.5);
 }
 
 .app-header a {
