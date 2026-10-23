@@ -17,11 +17,11 @@ function App() {
         <Routes>
           <Route element={<AppLayout />}>
             <Route path="/" element={<Navigate to="/velocity" replace />} />
-            <Route path="velocity" element={<Velocity />} />
-            <Route path="temperature" element={<Temperature />} />
-            <Route path="average-speed" element={<AverageSpeed />} />
-            <Route path="gears" element={<Gears />} />
-            <Route path="lean-angle" element={<LeanAngle />} />
+            <Route path="/velocity" element={<Velocity />} />
+            <Route path="/temperature" element={<Temperature />} />
+            <Route path="/average-speed" element={<AverageSpeed />} />
+            <Route path="/gears" element={<Gears />} />
+            <Route path="/lean-angle" element={<LeanAngle />} />
           </Route>
         </Routes>
       </BrowserRouter>
