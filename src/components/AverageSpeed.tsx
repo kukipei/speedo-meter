@@ -2,8 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { useGeolocationContext } from "../context/geolocation-context";
 import Spinner from "./Spinner";
 import Button from "./Button";
-import { NavLink } from "react-router-dom";
-import { ignoreButtonClicks } from "../util/ignoreButtonClicks";
 
 function AverageSpeed() {
   const { loading, coords, error } = useGeolocationContext();
@@ -28,18 +26,12 @@ function AverageSpeed() {
   if (error) return null;
 
   return (
-    <NavLink
-      to="/average-speed"
-      style={{ display: "contents" }}
-      onClick={ignoreButtonClicks}
-    >
-      <section className="average-speed-section">
-        <div className="average-speed">
-          <p>{Math.round(average)}</p>
-          <Button onClick={resetAverageSpeed}>Reset</Button>
-        </div>
-      </section>
-    </NavLink>
+    <section className="average-speed-section">
+      <div className="average-speed">
+        <p>{Math.round(average)}</p>
+        <Button onClick={resetAverageSpeed}>Reset</Button>
+      </div>
+    </section>
   );
 }
 

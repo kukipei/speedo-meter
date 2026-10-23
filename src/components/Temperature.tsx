@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useGeolocationContext } from "../context/geolocation-context";
 import { get } from "../util/http";
 import Spinner from "./Spinner";
-import { NavLink } from "react-router-dom";
 
 function Temperature() {
   const { coords } = useGeolocationContext();
@@ -34,11 +33,9 @@ function Temperature() {
   if (temperature === null) return <Spinner />;
 
   return (
-    <NavLink to="/temperature" style={{ display: "contents" }}>
-      <section className="temperature-section">
-        <div>{temperature !== null && `${temperature}°C`}</div>
-      </section>
-    </NavLink>
+    <section className="temperature-section">
+      <div>{temperature !== null && `${temperature}°C`}</div>
+    </section>
   );
 }
 
