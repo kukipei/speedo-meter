@@ -43,6 +43,7 @@ function Gears() {
 
   return (
     <section className="gears-section">
+      <div className="title">Gears</div>
       <div className="gears">
         <div className="gear-current">
           <div className="gear-item">

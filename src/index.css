@@ -244,9 +244,12 @@ main {
   }
 }
 
+section {
+  flex-direction: column;
+}
+
 .velocity-section {
   font-size: min(16vw, 40vh);
-  flex-direction: column;
 }
 
 .average-speed-section {
@@ -297,7 +300,6 @@ main {
   }
 
   .gears-section {
-    flex-direction: row;
     gap: 2em;
     font-size: min(4.5vw, 4vh);
   }

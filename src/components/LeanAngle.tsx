@@ -21,6 +21,7 @@ function LeanAngle() {
 
   return (
     <section className="lean-angle-section">
+      <div className="title">Lean Angle</div>
       <div className="lean-angle-row">
         <span className="lean-max" title="Max left">
           {maxLeft}°
