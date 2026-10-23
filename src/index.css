@@ -141,6 +141,10 @@ main {
   height: 100%;
 }
 
+.title {
+  font-size: 0.4em;
+}
+
 .velocity-section,
 .temperature-section,
 .average-speed-section,
@@ -242,6 +246,7 @@ main {
 
 .velocity-section {
   font-size: min(16vw, 40vh);
+  flex-direction: column;
 }
 
 .average-speed-section {
