@@ -142,7 +142,11 @@ main {
 }
 
 .title {
-  font-size: 0.4em;
+  font-size: min(12vw, 11vh);
+}
+
+.section-content {
+  font-size: min(30vw, 28vh);
 }
 
 .velocity-section,
@@ -235,10 +239,6 @@ main {
     margin-block: auto;
   }
 
-  .average-speed {
-    flex-direction: column;
-  }
-
   .lean-angle-row {
     gap: 1em;
   }
@@ -246,22 +246,6 @@ main {
 
 section {
   flex-direction: column;
-}
-
-.velocity-section {
-  font-size: min(16vw, 40vh);
-}
-
-.average-speed-section {
-  font-size: min(10vw, 30vh);
-}
-
-.temperature-section {
-  font-size: min(5vw, 15vh);
-}
-
-.lean-angle-section {
-  font-size: min(5vw, 12vh);
 }
 
 .gears-section {
@@ -275,28 +259,12 @@ section {
     grid-template-rows: 1fr 2fr 1.5fr 1.5fr 1fr;
   }
 
-  .lean-angle-section {
-    font-size: min(10vw, 10vh);
-  }
-
-  .velocity-section {
-    font-size: min(30vw, 28vh);
-  }
-
   .velocity-section svg {
     font-size: min(10vw, 28vh);
   }
 
-  .average-speed-section {
-    font-size: min(20vw, 18vh);
-  }
-
   .average-speed-section svg {
     font-size: min(10vw, 18vh);
-  }
-
-  .temperature-section {
-    font-size: min(10vw, 12vh);
   }
 
   .gears-section {
@@ -362,6 +330,7 @@ section {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  font-size: min(10vw, 10vh);
 }
 
 .lean-max {
@@ -371,10 +340,6 @@ section {
 
 .lean-side {
   font-size: 0.5em;
-}
-
-.lean-angle-section > .lean-angle button {
-  font-size: 0.3em;
 }
 
 .gears button,

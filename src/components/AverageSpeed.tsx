@@ -28,7 +28,7 @@ function AverageSpeed() {
   return (
     <section className="average-speed-section">
       <div className="title">Average Speed</div>
-      <div className="average-speed">
+      <div className="average-speed section-content">
         <p>{Math.round(average)}</p>
         <Button onClick={resetAverageSpeed}>Reset</Button>
       </div>

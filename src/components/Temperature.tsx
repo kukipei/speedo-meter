@@ -35,7 +35,9 @@ function Temperature() {
   return (
     <section className="temperature-section">
       <div className="title">Temperature</div>
-      <div>{temperature !== null && `${temperature}°C`}</div>
+      <div className="section-content">
+        {temperature !== null && `${temperature}°C`}
+      </div>
     </section>
   );
 }

@@ -10,7 +10,9 @@ function Velocity() {
   return (
     <section className="velocity-section">
       <div className="title">Velocity</div>
-      <p className="velocity">{Math.round((coords?.speed ?? 0) * 3.6)}</p>
+      <p className="velocity section-content">
+        {Math.round((coords?.speed ?? 0) * 3.6)}
+      </p>
     </section>
   );
 }
