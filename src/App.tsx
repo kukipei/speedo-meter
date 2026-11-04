@@ -7,6 +7,7 @@ import Velocity from "./components/Velocity";
 import { GeolocationProvider } from "./context/GeolocationProvider";
 import { useWakeLock } from "./hooks/useWakeLock";
 import AppLayout from "./AppLayout";
+import Altitude from "./components/Altitude";
 
 function App() {
   useWakeLock(true);
@@ -22,6 +23,7 @@ function App() {
             <Route path="/average-speed" element={<AverageSpeed />} />
             <Route path="/gears" element={<Gears />} />
             <Route path="/lean-angle" element={<LeanAngle />} />
+            <Route path="/altitude" element={<Altitude />} />
           </Route>
         </Routes>
       </BrowserRouter>

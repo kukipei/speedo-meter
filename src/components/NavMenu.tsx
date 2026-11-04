@@ -3,6 +3,7 @@ import { IoIosSpeedometer } from "react-icons/io";
 import { TbTemperatureSun, TbAlarmAverage } from "react-icons/tb";
 import { GiGearStickPattern } from "react-icons/gi";
 import { RxAngle } from "react-icons/rx";
+import { LuPlaneTakeoff } from "react-icons/lu";
 
 function NavMenu() {
   return (
@@ -31,6 +32,11 @@ function NavMenu() {
         <li>
           <NavLink to="/lean-angle">
             <RxAngle />
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/altitude">
+            <LuPlaneTakeoff />
           </NavLink>
         </li>
       </ul>

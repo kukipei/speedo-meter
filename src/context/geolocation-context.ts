@@ -1,11 +1,9 @@
 import { createContext, useContext } from "react";
-import { useGeolocation } from "../hooks/useGeolocation";
+import { type GeoData } from "../hooks/useGeolocation";
 
-export type GeolocationContextValue = ReturnType<typeof useGeolocation>;
+// export type GeolocationContextValue = ReturnType<GeoData>;
 
-export const GeolocationContext = createContext<GeolocationContextValue | null>(
-  null,
-);
+export const GeolocationContext = createContext<GeoData | null>(null);
 
 export function useGeolocationContext() {
   const ctx = useContext(GeolocationContext);

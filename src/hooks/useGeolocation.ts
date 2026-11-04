@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-type GeoData = {
+export type GeoData = {
   loading: boolean;
   coords: GeolocationCoordinates | null;
   error: GeolocationPositionError | null;
