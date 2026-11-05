@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useGeolocationContext } from "../context/geolocation-context";
 import Spinner from "./Spinner";
-import Button from "./Button";
 
 function AverageSpeed() {
   const { loading, coords, error } = useGeolocationContext();
@@ -26,11 +25,10 @@ function AverageSpeed() {
   if (error) return null;
 
   return (
-    <section className="average-speed-section">
+    <section onClick={resetAverageSpeed} className="average-speed-section">
       <div className="title">Average Speed</div>
       <div className="average-speed section-content">
         <p>{Math.round(average)}</p>
-        <Button onClick={resetAverageSpeed}>Reset</Button>
       </div>
     </section>
   );

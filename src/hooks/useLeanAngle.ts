@@ -53,9 +53,7 @@ export function useLeanAngle() {
     }
   }, []);
 
-  const handleSectionClick = function handleClick(
-    e: React.MouseEvent<HTMLElement>,
-  ) {
+  const handleSectionClick = function (e: React.MouseEvent<HTMLElement>) {
     // let buttons, links and inputs do their own job
     if ((e.target as HTMLElement).closest("button, a, input")) return;
 
