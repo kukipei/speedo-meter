@@ -13,7 +13,7 @@ function Altitude() {
     return <div>Altitude not available on this device</div>;
 
   return (
-    <section>
+    <section className="altitude-section">
       <div className="title">Altitude</div>
       <div className="section-content">{Math.round(coords!.altitude)}</div>
     </section>

@@ -154,7 +154,8 @@ main {
 .average-speed-section,
 .gears-section,
 .lean-angle-section,
-.spinner-section {
+.spinner-section,
+.altitude-section {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -196,7 +197,8 @@ main {
   .temperature-section,
   .average-speed-section,
   .gears-section,
-  .lean-angle-section {
+  .lean-angle-section,
+  .altitude-section {
     flex-direction: column;
     align-items: center;
   }
