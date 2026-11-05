@@ -7,8 +7,6 @@ function Altitude() {
   if (loading) return <Spinner />;
   if (error) return null;
 
-  //   console.log(coords);
-
   if (coords?.altitude === null)
     return <div>Altitude not available on this device</div>;
 
