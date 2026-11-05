@@ -2,8 +2,14 @@ import { useLeanAngle } from "../hooks/useLeanAngle";
 import Button from "./Button";
 
 function LeanAngle() {
-  const { angle, maxLeft, maxRight, permission, requestPermission } =
-    useLeanAngle();
+  const {
+    angle,
+    maxLeft,
+    maxRight,
+    permission,
+    requestPermission,
+    handleSectionClick,
+  } = useLeanAngle();
 
   if (permission === "unsupported") return null;
 
@@ -20,7 +26,7 @@ function LeanAngle() {
   const side = angle === 0 ? "" : angle > 0 ? "R" : "L";
 
   return (
-    <section className="lean-angle-section">
+    <section onClick={handleSectionClick} className="lean-angle-section">
       <div className="title">Lean Angle</div>
       <div className="lean-angle-row">
         <span className="lean-max" title="Max left">

@@ -53,6 +53,16 @@ export function useLeanAngle() {
     }
   }, []);
 
+  const handleSectionClick = function handleClick(
+    e: React.MouseEvent<HTMLElement>,
+  ) {
+    // let buttons, links and inputs do their own job
+    if ((e.target as HTMLElement).closest("button, a, input")) return;
+
+    setMaxLeft(0);
+    setMaxRight(0);
+  };
+
   useEffect(() => {
     if (permission !== "granted") return;
 
@@ -68,5 +78,12 @@ export function useLeanAngle() {
     return () => window.removeEventListener("deviceorientation", onOrientation);
   }, [permission]);
 
-  return { angle, maxLeft, maxRight, permission, requestPermission };
+  return {
+    angle,
+    maxLeft,
+    maxRight,
+    permission,
+    requestPermission,
+    handleSectionClick,
+  };
 }

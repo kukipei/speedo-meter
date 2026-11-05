@@ -15,7 +15,7 @@ function Altitude() {
   return (
     <section>
       <div className="title">Altitude</div>
-      <div className="title">{Math.round(coords!.altitude)}</div>
+      <div className="section-content">{Math.round(coords!.altitude)}</div>
     </section>
   );
 }
