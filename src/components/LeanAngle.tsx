@@ -34,7 +34,7 @@ function LeanAngle() {
         </span>
         <div className="lean-angle">
           <p>{Math.abs(angle)}°</p>
-          <span className="lean-side">{side} neso</span>
+          <span className="lean-side">{side}</span>
         </div>
         <span className="lean-max" title="Max right">
           {maxRight}°
